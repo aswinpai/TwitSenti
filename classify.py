@@ -3,6 +3,7 @@ from textblob import TextBlob
 
 train = [
     ('I love this sandwich.', 'pos'),
+    ('I hate this sandwich.', 'neg')
     ('This is an amazing place!', 'pos'),
     ('I feel very good about these beers.', 'pos'),
     ('This is my best work.', 'pos'),
@@ -22,6 +23,7 @@ train = [
 ]
 test = [
     ('The beer was good.', 'pos'),
+    ('The beer was bad.', 'neg'),
     ('I do not enjoy my job', 'neg'),
     ("I ain't feeling dandy today.", 'neg'),
     ("I feel amazing!", 'pos'),
