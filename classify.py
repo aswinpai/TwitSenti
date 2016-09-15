@@ -24,6 +24,7 @@ train = [
 test = [
     ('The beer was good.', 'pos'),
     ('The beer was bad.', 'neg'),
+    ('I hate this beer.', 'neg')
     ('I do not enjoy my job', 'neg'),
     ("I ain't feeling dandy today.", 'neg'),
     ("I feel amazing!", 'pos'),
