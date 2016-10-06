@@ -1,0 +1,9 @@
+Python 3.0
+
+Tweepy
+UrlLib
+
+BeautifulSoup
+
+Numpy
+
