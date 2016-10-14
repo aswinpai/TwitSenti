@@ -1,3 +1,4 @@
+'''Authenticate and extract live tweets from twitter based on the query in mainfile.py'''
 from tweepy import Stream
 from tweepy import OAuthHandler
 from tweepy.streaming import StreamListener

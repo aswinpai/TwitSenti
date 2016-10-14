@@ -1,3 +1,4 @@
+'''Gahters the hashtags and and shows the count on a graph'''
 import json
 import re
 from mainfile import query, query_location, dictionary, hashtag_file, hashtag_graph
@@ -11,6 +12,7 @@ keys_freq = []
 values_freq = []
 id_list = list()
 
+'''Plots the Hashtag Bar Graph'''
 def hashtag_plot(c):
 	xaxis = range(len(c))
 	for key, value in c.most_common()[::-1]:
@@ -35,7 +37,7 @@ def clean_text(text):
     text = re.sub('[^A-Za-z0-9 ]+', ' ', text)
     return text
 
-
+'''Recognizes and counts hashtags'''
 with open(query_location) as f:
     for line in f:
         try:

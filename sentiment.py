@@ -1,6 +1,5 @@
 '''
-A script which takes two files as parameters.A file containing LiveTweets file as the first argument and other argument as
-a file containing sentiment scores for each term
+A script which takes two files as parameters.A file containing tweet file and a dictionary containing sentiment scores for each term and compares them to produce a sentiment.
 '''
 
 import sys
@@ -28,7 +27,8 @@ dic={}
 
 print("Gathering Tweet Sentiment............")
 
-def print_lines():
+'''Read Dictionary'''
+def read_dictionary():
     x=0
     with open(dictionary) as f:
         lines=f.readline()
@@ -39,7 +39,7 @@ def print_lines():
                 scores=line[1]
                 dic[line[0]]=int(scores)
 
-
+'''Plots a pic chart for the sentiment scores'''
 def tweet_sentiment_plot(cou,pos,neg,neu):
     plt.figure()
     # The slices will be ordered and plotted counter-clockwise.
@@ -51,7 +51,7 @@ def tweet_sentiment_plot(cou,pos,neg,neu):
     plt.suptitle(sub_title, y=0.99, fontsize=12)
     plt.savefig(sentiment_location)
 
-#Generate a WordCloud
+'''Generate a WordCloud'''
 
 def tweet_wordcloud():
     text = open(tweet_file).read()
@@ -67,6 +67,7 @@ def tweet_wordcloud():
     plt.axis("off")
     plt.savefig(wc_location)
     
+'''Read the json time and outputs tweets'''
 def tweet():
     count=0
     neu=0
@@ -104,6 +105,7 @@ def tweet():
                 continue
     tweet_sentiment(count, pos, neg , neu)
 
+'''Calculates Sentiment'''
 def tweet_sentiment(c,p,n,ne):
     count=c
     positive=float(p/c)*100
@@ -121,7 +123,7 @@ def tweet_sentiment(c,p,n,ne):
 def main():
     dic ={}
     open(tweet_file, "w")
-    print_lines()
+    read_dictionary
     tweet()
     print("Tweet Sentiment pie chart generated at:", sentiment_location)
     tweet_wordcloud()

@@ -3,7 +3,9 @@ import sys
 
 #inputs
 location = os.getcwd()
+#Input the query here. Hardcoading now. Taken from GUI later
 query='whatever'
+#Locations of outputs
 query_location=location + '/input/' + query +'.json'
 dictionary=location+ '/input/' +'AFINN-111.txt'
 tweet_file=location+ '/output/' +'tweet_out.txt'

@@ -1,10 +1,11 @@
-'''Create a HTML PAge from the Outputs'''
+'''Create a HTML Page from the Outputs'''
 from bs4 import BeautifulSoup
 from importlib import reload
 import mainfile
 reload(mainfile)
 from mainfile import query, query_location, dictionary, sentiment_location, wc_location, hashtag_graph, url_sentiment
 
+'''A default HTLM template'''
 doc = '''
 <html><head><title>Sentiment Analysis</title></head>
 <body>
@@ -27,6 +28,8 @@ doc = '''
 </body>
 </html>
 '''
+
+'''Inserts the URL sentiment into the HTML tag <table>'''
 soup = BeautifulSoup(doc,'html.parser')
 body = soup.new_tag('body')
 soup.insert(0, body)

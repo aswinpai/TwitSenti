@@ -1,3 +1,4 @@
+'''Etract URL's and run sentiment analysis on each link'''
 from bs4 import BeautifulSoup
 import urllib
 import csv
@@ -16,6 +17,7 @@ dic={}
 x=0
 url_list=[]
 
+'''Read Dictionary'''
 with open(dictionary) as f:
     lines=f.readline()
     while(lines!=''):
@@ -25,7 +27,7 @@ with open(dictionary) as f:
             scores=line[1]
             dic[line[0]]=int(scores)
 
-
+'''Read tweets file for URL's'''
 with open(tweet_file) as f:
         for line in f:        
             try:
